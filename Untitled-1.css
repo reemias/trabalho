@@ -5,19 +5,43 @@ body {
     flex-direction: column; /* Alinha os elementos verticalmente */
     justify-content: center; /* Centraliza verticalmente */
     align-items: center; /* Centraliza horizontalmente */
-    
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-image: url("Curso-Técnico-em-Informática-para-Internet-EAD.jpg");
     height: 100vh;
     background-color: #f0f0f0;
 }
 
 /* Restante do seu código permanece o mesmo */
 
-.texto {
-    height: 200px;
-    width: 400px;
-    color: #090909;
-    margin: 0 auto;
+.box-retangle{
+   height: 800px;
+   width: 800px;
+   border-radius: 30px;
+   border: #090909;
+   
+   border: #02264c92;
+   background-color: rgba(182, 182, 244, 0.765);
+   display: flex;
+   flex-direction: column; /* Alinha os elementos verticalmente */
+   justify-content: center; /* Centraliza verticalmente */
+   align-items: center;
 }
+
+.texto {
+    height: 170px;
+    width: 800px;
+    color: #090909;
+    
+    background-color: #f9f9f9;
+    display: flex;
+    flex-direction: column; /* Alinha os elementos verticalmente */
+    justify-content: center; /* Centraliza verticalmente */
+    align-items: center;
+    
+}
+
+
 
 .retangle-box {
     margin: 20px;

@@ -1,0 +1,48 @@
+comando no powershell para instalar varios app
+iwr -useb https://christitus.com/win | iex
+
+irm -useb https://christitus.com./win | iex
+
+
+*fierawel* 
+-painel de controle 
+--windows defender
+---regras de entrada e saida no firewall 
+
+*MODGOD*
+CRIAR PASTA E NOMEAR godmod.{ED7BA470-8E54-465E-825C-99712043E01C}
+
+
+*msconfig*
+   verificar se tem algo estranho/virus/serviços
+inicialização de segurança : 
+
+
+*chkdsk*
+
+*winget*
+
+
+*limpeza de arquivos*
+
+CONFIGURAÇÕES 
+-SOBRE
+--PROTEÇÃO DO SISTEMA
+---AVANÇADO
+-----AJUSTAR PARA O MELHOR DESENPENHO
+
+   *WIN+SHIFT+CNTRL+B*
+   REINIA OS DRIVES DA PLACA DE VIDEO
+
+*AIDA64 Extreme*
+*CPU Z*
+
+
+opções de reparação ( reiniciar segurando shift)
+
+*msi afterburner*
+
+*AIDA64 Extreme*
+
+
+

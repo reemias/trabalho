@@ -1,203 +1,130 @@
-
-body{
+/* Reset básico */
+* {
     margin: 0;
-    font-family: Arial, sans-serif;
-    margin: 0 auto;
     padding: 0;
-    background-color: #c7c0ac;
+    box-sizing: border-box;
 }
 
+/* Corpo e fundo */
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #2c3e50, #4ca1af);
+    color: #E0E0E0; /* Cor do texto */
+    line-height: 1.6;
+}
+
+/* Navegação */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #1F1F1F; /* Fundo da navegação */
+}
+
+nav .logo h1 {
+    color: #dfebe9; /* Cor do logo */
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul a {
+    color: #E0E0E0; /* Cor do texto dos links */
+    text-decoration: none;
+    padding: 10px 15px;
+    transition: color 0.3s;
+}
+
+nav ul a:hover {
+    color: #03DAC6; /* Cor do hover */
+}
+
+nav .botão-menu {
+    display: none; /* Ocultando o botão de menu em desktop */
+}
+
+/* Cabeçalhos da seção */
+.menu3 {
+    text-align: center;
+    margin: 20px 0;
+    background-color: rgba(255, 255, 255, 0.74); /* Fundo semi-transparente */
+    padding: 10px 0;
+    color: #121212;
+}
+
+/* Serviços */
 .servicos {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr); 
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
-    padding: 40px;
-    background-color: #333;
+    padding: 20px;
 }
 
 .servico {
-    background-color: white;
-    border: 1px solid #ddd;
-    border-radius: 10px;
+    background-color: #1F1F1F; /* Fundo do cartão */
+    border-radius: 8px;
+    overflow: hidden;
+    width: 300px;
     text-align: center;
-    padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    transition: transform 0.6s ease-in-out, box-shadow 0.6s ease-in-out;
+    transition: transform 0.3s;
 }
 
 .servico img {
-    width: 100%; 
-    height: 200px; 
-    object-fit: cover; 
-    border-radius: 10px;
-    margin-bottom: 15px;
-    transition: transform 0.6s ease-in-out;
+    width: 100%;
+    height: auto;
 }
 
 .servico h2 {
-    font-size: 1.5em;
-    margin-bottom: 10px;
+    color: #03DAC6; /* Cor do título */
+    margin: 15px 0;
 }
 
 .servico p {
-    font-size: 1.1em;
-    margin-bottom: 10px;
+    padding: 0 15px;
+    margin-bottom: 15px;
 }
 
-.servico .btn {
+.servico a.btn {
     display: inline-block;
+    background-color: #03DAC6; /* Cor do botão */
+    color: #121212; /* Cor do texto do botão */
     padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    text-decoration: none;
     border-radius: 5px;
-    transition: background-color 0.3s ease;
+    margin-bottom: 15px;
+    text-decoration: none;
+    transition: background-color 0.3s;
 }
 
-.servico .btn:hover {
-    background-color: #0056b3;
+.servico a.btn:hover {
+    background-color: #018786; /* Cor do hover do botão */
 }
 
-.servico:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-}
-
-.servico:hover img {
-    transform: scale(1.1);
-}
-
-@media (max-width: 768px) {
-    .servicos {
-        grid-template-columns: 1fr;
-    }
-}
+/* Modal */
 .modal {
-    display: none; 
+    display: none; /* Oculto por padrão */
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); 
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente */
     justify-content: center;
     align-items: center;
-}
-
-.modal-content {
-    background-color: white;
-    padding: 20px;
-    border-radius: 10px;
-    width: 500px;
-    text-align: center;
-}
-
-.modal-content h2 {
-    margin-top: 0;
-}
-
-.modal-content .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-}
-
-.modal-content .close:hover,
-.modal-content .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-}
-
-.modal-content p {
-    margin: 15px 0;
-}
-
-h2{
-    text-align: center;
-    color: #333;
-}
-.tela-2{
-    background-color: aliceblue;
-}
-
-.menu3{
-    display: flex;
-    width: 100%;
-    background-color: #0056b3;
-}
-video{
-    width: 100%; 
-    height: 200px;
-    object-fit: cover;
-}
-
-.final{
-    height: 100px;
-    width: 100%;
-    display: flex;
-    background-color: #000000;
-}
-
-.p1{
-    color: aliceblue;
-    margin: 20px;
-}
-
-nav{
-    color: aliceblue;
-    background-color: #333;
-    padding: 0 20px;
-    justify-content: space-between;
-    
-}
-
-nav , ul {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-}
-
-ul{
-    list-style: none;
-    padding: 0;
-}
-
-li {
-    color: wheat;
-    text-align: center;
-    font-size: 30px;
-    padding: 0 20px;
-}
-
-.botão-menu{
-    background-color: transparent;
-    border: none;
-    color: wheat;
-    font-size: 34px;
-    position: absolute;
-    right: 10px;
-    top: 23px;
-    display: none;
-}
-
-
-li:hover  {
-    cursor: pointer;
-    opacity: 0.8;
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.botão-menu:focus ~ ul{
- height: 200px;
+    z-index: 1000;
 }
 
 
 @media (max-width: 525px){
-    nav, ul{
+
+    .servicos{
+        display: flex;
         flex-direction: column;
-        align-items: unset;
+        justify-content: center;
+        align-items: center;
     }
 
     li{
@@ -205,7 +132,9 @@ li:hover  {
     }
 
     .logo{
-        width: 130px;
+        width: 100%;
+        margin-top: 20px;
+        text-align: center;
     }
 
     .h1-top{
@@ -227,7 +156,17 @@ li:hover  {
     }
     
     .botão-menu{
-        margin-top: 0;
+        width: 30%;
+        margin-left: 10px;
         display: flex;
         font-size: 60px;
     }
+}
+
+@media (max-width: 768px) {
+    .servicos {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+}

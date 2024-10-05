@@ -1,6 +1,0 @@
-fsgmt.msc
-
-defrag (serve para desfragmentar a maquina)
-
-
-como desativar a proteção remota usando o cmd

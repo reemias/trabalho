@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedidos</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+        }
+        .pedido {
+            background-color: #ffffff;
+            border: 1px solid #dee2e6;
+            border-radius: 0.25rem;
+            padding: 1rem;
+            margin: 1rem 0;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        .pedido p {
+            margin: 0.5rem 0;
+        }
+        .pedido p:first-child {
+            font-weight: bold;
+            font-size: 1.1rem;
+        }
+        .pedido p:nth-child(2) {
+            color: #6c757d;
+        }
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+        footer {
+            background-color: #343a40;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        .navegação {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Adiciona espaçamento entre os botões */
+    margin-top: 20px;
+}
+
+.navegação button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.navegação button:hover {
+    background-color: #0056b3;
+    transform: scale(1.1); /* Efeito de escala ao passar o mouse */
+}
+
+        #enviarWhatsapp {
+            background-color: #28a745;
+            border: none;
+            padding: 0.5rem 1rem;
+            border-radius: 0.25rem;
+            color: white;
+            cursor: pointer;
+        }
+        #popup {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 2rem;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 0.5rem;
+        }
+        #closePopup {
+            background-color: #dc3545;
+            border: none;
+            padding: 0.5rem 1rem;
+            color: white;
+            cursor: pointer;
+        }
+        #saveData {
+            background-color: #28a745;
+            border: none;
+            padding: 0.5rem 1rem;
+            color: white;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Histórico de Pedidos</h1>
+    </header>
+    <div class="container">
+        <div class="text-center mt-4">
+            <button id="enviarWhatsapp">Enviar Pedidos para WhatsApp</button>
+        </div>
+        <main class="mt-4 mb-5">
+            <div class="histórico_de_pedidos">
+                <div id="pedido"></div>
+            </div>
+        </main>
+    </div>
+    <footer>
+        <div class="navegação" style=" width: 100%;">
+            <a href="index.html">
+                <button class="btn btn-secondary">Menu</button>
+            </a>
+            <button class="btn btn-secondary">Pedidos</button>
+            <a href="https://www.instagram.com/cooperi9_/">
+                <button class="btn btn-secondary">Instagram</button>
+            </a>
+        </div>
+    </footer>
+    <div id="popup" class="popup">
+        <button id="closePopup">Fechar</button>
+        <div id="popupContent"></div>
+        <button id="saveData">Enviar Pedido</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function carregarPedidos() {
+            const pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
+            const historicoDiv = document.querySelector('.histórico_de_pedidos');
+            historicoDiv.innerHTML = '';
+
+            pedidos.forEach((pedido, index) => {
+                const pedidoDiv = document.createElement('div');
+                pedidoDiv.className = 'pedido';
+                pedidoDiv.innerHTML = `
+                    <p>Pedido: ${pedido.content}</p>
+                    <p>Data: ${pedido.timestamp}</p>
+                    <button class="btn btn-danger delete-pedido" onclick="excluirPedido(${index})">Excluir</button>
+                `;
+                historicoDiv.appendChild(pedidoDiv);
+            });
+        }
+
+        function excluirPedido(index) {
+            const pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
+            pedidos.splice(index, 1);
+            localStorage.setItem('pedidos', JSON.stringify(pedidos));
+            carregarPedidos();
+        }
+
+        document.getElementById('enviarWhatsapp').addEventListener('click', () => {
+            const pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
+            const mensagem = pedidos.map(pedido => `Pedido: ${pedido.content}\nData: ${pedido.timestamp}`).join('\n\n');
+            const numeroWhatsApp = '5582988873225';
+            const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
+            window.open(url, '_blank');
+        });
+
+        window.onload = carregarPedidos;
+    </script>
+</body>
+</html>

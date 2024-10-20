@@ -1,0 +1,47 @@
+/* Estilizações Gerais */
+body {
+    font-family: 'Roboto', sans-serif;
+    color: #333;
+}
+
+/* Popup */
+#popup {
+    display: none;
+}
+
+footer {
+    background-color: #1c1c1c; /* Uma cor mais suave, semelhante ao cinza escuro do exemplo */
+    padding: 10px 0;
+}
+
+footer button, footer a {
+    flex-direction: column;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+footer img {
+    height: 24px; /* Tamanho dos ícones */
+    width: 24px;
+    margin-bottom: 5px;
+}
+
+footer button, footer a {
+    color: white;
+    text-decoration: none;
+}
+
+
+/* Responsividade */
+@media (max-width: 600px) {
+    footer {
+        display: flex;
+        gap: 10px;
+    }
+
+    footer button, footer a {
+        width: 80%;
+    }
+}
+

@@ -108,7 +108,7 @@
     </header>
     <div class="container">
         <div class="text-center mt-4">
-            <button id="enviarWhatsapp">Enviar Pedidos para WhatsApp</button>
+            <button id="enviarWhatsapp">Enviar Pedidos para o whatsapp da sistemas.i9</button>
         </div>
         <main class="mt-4 mb-5">
             <div class="histórico_de_pedidos">
@@ -162,7 +162,7 @@
 
         document.getElementById('enviarWhatsapp').addEventListener('click', () => {
             const pedidos = JSON.parse(localStorage.getItem('pedidos')) || [];
-            const mensagem = pedidos.map(pedido => `Pedido: ${pedido.content}\nData: ${pedido.timestamp}`).join('\n\n');
+            const mensagem = pedidos.map(pedido => `oi ! eu : ${pedido.content}\nData: ${pedido.timestamp}`).join('\n\n');
             const numeroWhatsApp = '5582988873225';
             const url = `https://wa.me/${numeroWhatsApp}?text=${encodeURIComponent(mensagem)}`;
             window.open(url, '_blank');

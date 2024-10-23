@@ -6,50 +6,6 @@
     <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <title>Serviços de Informática</title>
-    <style>
-        body {
-            background-color: #070707; /* Fundo claro */
-            color: #333; /* Texto escuro */
-        }
-
-        main{
-            background-color: #faf3f3;
-        }
-        header {
-            background-color: #ffcc00; /* Amarelo */
-            background-image: url('/img/R1.jfif');
-            background-size: cover;
-            background-position: center;
-        }
-        .container {
-            max-width: 1200px;
-        }
-        .option {
-            background-color: #527174; /* Azul claro */
-            border: 2px solid #0d1f22; /* Verde azulado */
-        }
-        .footer-btn {
-            background-color: #ffcc00; /* Amarelo */
-            color: #091b19; /* Verde escuro */
-        }
-        .footer-btn:hover {
-            background-color: #ffeb3b; /* Amarelo mais claro */
-        }
-        @media (max-width: 640px) {
-            .option {
-                flex-direction: column;
-                align-items: center;
-                color: rgb(0, 0, 0);
-                background-color: #ffffff;/* Azul claro para mobile */
-            }
-            footer .footer-btn {
-                height: 50px;
-                width: 80px;
-                border-radius: 10px;
-                box-shadow: 0 3px 5px rgba(0, 0, 0, 0.2);
-            }
-        }
-    </style>
 </head>
 <body class="bg-gray-100 font-sans">
     <header class="bg-blue-900 text-white p-4 text-center">
@@ -60,7 +16,7 @@
     <div class="container mx-auto mt-4">
         <div class="flex justify-center mb-4">
             <input type="text" id="procurar" class="bg-white shadow border rounded-lg py-2 px-4 w-4/5" placeholder="Procurar..." style="background-color: rgb(38, 42, 46);">
-            <button class="bg-blue-700 text-white ml-2 px-4 py-2 rounded-lg shadow" style="background-color: rgb(201, 182, 13);">Pesquisar</button>
+            <button class="bg-blue-700 text-white ml-2 px-4 py-2 rounded-lg shadow" style="background-color: rgb(204, 157, 2);">Pesquisar</button>
         </div>
             <main class="overflow-y-auto h-screen">
                 <div class="grid grid-cols-1 gap-4">
@@ -68,7 +24,7 @@
                         <img src="img/R.jfif" alt="sanduiche" class="w-full h-46 object-cover rounded-md">
                         <div class="mt-2">
                             <h2 class="text-xl font-bold text-blue-900 text-center">Designer de Logotipo</h2>
-        
+
                         <div class="text-center">
                             <h3>Criação de artes personalizadas para seu estabelecimento</h3>
                             <p>Entrega online</p>
@@ -76,7 +32,6 @@
                             <p>Preços acessíveis</p>
                         </div>
                     </div>
-        
                     </div>
                     <div class="bg-white p-4 rounded-lg shadow-md option" data-content="gostaria de saber mais sobre os sitemas que tem para oferecer">
                         <img src="img/x picanha.jfif" alt="sanduiche" class="w-full h-46 object-cover rounded-md">
@@ -117,7 +72,6 @@
                             </div>
                         </div>
                     </div>
-        
                     <div class="bg-white p-4 rounded-lg shadow-md option" data-content="gostaria de consertar meu computador">
                         <img src="img/conserto de computador.jfif" alt="sanduiche" class="w-full h-46 object-cover rounded-md">
                         <div class="mt-2">
@@ -134,8 +88,7 @@
                                 </div>
                             </div>
                         </div>
-        
-                        <div class="bg-white p-4 rounded-lg shadow-md option" style="background-color: #091b19; color: wheat;" data-content="gostaria da ajuda do serviço de suporte da cooperativaI9">
+                        <div class="bg-white p-4 rounded-lg shadow-md option" data-content="gostaria da ajuda do serviço de suporte da cooperativaI9">
                             <div class="mt-2">
                                 <h2 class="text-xl font-bold text-blue-900">suporte T.I</h2>
                                 <p>numero de telefone para contato :</p>
@@ -145,12 +98,8 @@
                             </div>
                         </div>
                     </div>
-                    <br>
-                        <br>
-                        
-
             </main>
-        </div>
+    </div>
 
     <footer class="bg-gray-900 text-white p-4 fixed bottom-0 w-full flex justify-around" style="width: 100%; margin: 0;">
         <button class="footer-btn flex flex-col items-center justify-center text-white px-2 py-2">
@@ -163,7 +112,6 @@
             <img src="img/instagram_icon_125245.svg" alt="Instagram" class="h-6 w-6 mb-1"> Instagram
         </a>
     </footer>
-
     <script>
         function unlock() {
             var username = document.getElementById('username').value;
@@ -174,7 +122,6 @@
                 alert('Nome ou senha incorretos');
             }
         }
-
         document.querySelectorAll('.option').forEach(option => {
             option.addEventListener('click', () => {
                 const popup = document.getElementById('popup');
